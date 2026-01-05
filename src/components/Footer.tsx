@@ -1,9 +1,10 @@
 import '../assets/scss/footer.scss';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
         <footer className='footer'>
-            <p>© 2024 EquiLevel. All rights reserved.</p>
+            <Link to='/login'>© 2024 EquiLevel. All rights reserved.</Link>
         </footer>
     )
 }

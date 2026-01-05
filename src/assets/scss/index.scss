@@ -1,20 +1,30 @@
 @use 'variables';
 
-*{
+body, html, #root {
+  background-color: variables.$primary-light-color;
+  height :100%;
   margin : 0;
-  box-sizing: border-box;
 }
 
-body {
-  background-color: variables.$primary-light-color;
-  width : 100vw;
+.layout {
+  min-height : 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family : variables.$title-font;
 }
 
-p {
+p, a {
   font-family: variables.$body-font;
 }
 
+a {
+  text-decoration: none;
+  color : variables.$black;
+}
