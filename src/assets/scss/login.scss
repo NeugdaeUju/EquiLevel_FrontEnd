@@ -6,11 +6,16 @@ main {
     align-items: center;
 }
 
+.login-card {
+    position : relative;
+    width : 100%;
+}
+
 .login-container {
     width : 30%;
     height : 30%;
     background-color : variables.$tertiary-color;
-    padding : 1rem 5rem;
+    padding : 2rem 5rem;
     border-radius : 20px;
     display : flex;
     flex-direction: column;
@@ -19,10 +24,13 @@ main {
 
     &__icon {
         position : absolute;
-        top: 23%;
-        right: 37%;
-        z-index: 10;
+        top : 0;
+        right: -2.5rem;
         cursor: pointer;
+    }
+
+    &__title {
+        text-align : center;
     }
 
     &__form {

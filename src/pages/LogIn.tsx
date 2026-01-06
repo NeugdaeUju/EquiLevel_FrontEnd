@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 function LogIn() {
     return (
             <div className='login-container'>
-                <h1 className='login-container__title'>LogIn</h1>
-                <Link to='/'  className='login-container__icon'><FaChevronLeft/></Link>
-                <Form
-                    button='LogIn'
-                    link='/signup'
-                    linkText="You don't have an account ? Go here !"/>
+                <div className='login-card'>
+                    <Link to='/'  className='login-container__icon'><FaChevronLeft/></Link>
+                    <h1 className='login-container__title'>LogIn</h1>
+                    <Form
+                        button='LogIn'
+                        link='/signup'
+                        linkText="You don't have an account ? Go here !"/>
+                </div>
             </div>
     )
 }
