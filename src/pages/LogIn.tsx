@@ -2,8 +2,24 @@ import '../assets/scss/login.scss';
 import Form from '../components/SubForm.tsx';
 import { FaChevronLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch , useSelector } from 'react-redux';
+import { login } from '../features/auth/authSlice.ts'
+import type { RootState, AppDispatch } from '../store/store.ts';
 
 function LogIn() {
+    const dispatch = useDispatch<AppDispatch>();
+    const { loading: _loading, error: _error } = useSelector((state: RootState) => state.auth);
+    const [email, setEmail] = useState('');
+    const[password, setPassword] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        dispatch(login({ email, password }));
+        console.log('Vous avez cliquez sur le bouton !');
+    }
+
+
     return (
             <div className='login-container'>
                 <div className='login-card'>
@@ -12,7 +28,12 @@ function LogIn() {
                     <Form
                         button='LogIn'
                         link='/signup'
-                        linkText="You don't have an account ? Go here !"/>
+                        linkText="You don't have an account ? Go here !"
+                        handleSubmit={handleSubmit}
+                        setEmail={setEmail}
+                        email={email}
+                        setPassword={setPassword}
+                        password={password}/>
                 </div>
             </div>
     )
