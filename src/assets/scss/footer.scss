@@ -3,9 +3,13 @@
 .footer {
     background-color: variables.$primary-color;
     height : 1rem;
-    padding : 1rem;
+    padding : 1.5rem;
     display : flex;
     justify-content: center;
     align-items: center;
     margin-top : 4rem;
+
+    &_link {
+        cursor :default
+    }
 }

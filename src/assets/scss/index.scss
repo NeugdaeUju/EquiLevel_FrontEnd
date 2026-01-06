@@ -1,5 +1,9 @@
 @use 'variables';
 
+* {
+  box-sizing : border-box;
+}
+
 body, html, #root {
   background-color: variables.$primary-light-color;
   height :100%;
