@@ -10,14 +10,19 @@ import type { RootState, AppDispatch } from '../store/store.ts';
 function LogIn() {
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
-    const { loading: _loading, error: _error } = useSelector((state: RootState) => state.auth);
+    const { loading: _loading, error } = useSelector((state: RootState) => state.auth);
     const [email, setEmail] = useState('');
     const[password, setPassword] = useState('');
+    const token = useSelector((state: RootState) => state.auth.token)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         dispatch(login({ email, password }));
         console.log('Vous avez cliquez sur le bouton !');
+        
+    }
+    
+    if (token) {
         navigate('/');
     }
 
@@ -36,6 +41,11 @@ function LogIn() {
                         email={email}
                         setPassword={setPassword}
                         password={password}/>
+                    {error && (
+                        <p className='login-card__error'>
+                            {error}
+                        </p>
+                    )}
                 </div>
             </div>
     )

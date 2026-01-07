@@ -22,8 +22,8 @@ export const login = createAsyncThunk(
             const data = await loginUser(email, password);
             localStorage.setItem('token', data.token);
             return data;
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
+        } catch (message) {
+            return thunkAPI.rejectWithValue(message);
         }
     }
 );
