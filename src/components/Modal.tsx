@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaXmark } from "react-icons/fa6";
-import '../assets/scss/modaleRaces.scss';
+import '../assets/scss/modale.scss';
 
 type ModalProps = {
     isOpen: boolean;
@@ -14,10 +14,10 @@ const ModalRaces: React.FC<ModalProps> = ({isOpen, onClose, title, children}) =>
 
     return (
         <div className='modal-overlay' onClick={onClose}>
-            <div className="mdoal" onClick={(e) => e.stopPropagation}>
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
                 <div className='modal-header'>
                     {title && <h2>{title}</h2>}
-                    <button className="modal-colse" onClick={onClose}>
+                    <button className="modal-close" onClick={onClose}>
                         <FaXmark/>
                     </button>
                 </div>

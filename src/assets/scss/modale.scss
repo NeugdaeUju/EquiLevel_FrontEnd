@@ -3,7 +3,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(237,224,208, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,29 +11,40 @@
 }
 
 .modal {
-  background: white;
+  background: variables.$tertiary-color;
   width: 90%;
   max-width: 500px;
   border-radius: 8px;
   padding: 1.5rem;
   animation: fadeIn 0.2s ease;
+  position : relative;
 }
 
 .modal-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .modal-close {
-  background: none;
+  background: variables.$tertiary-color;
+  border-radius : 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding : 5px;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  position : absolute;
+  top : -35%;
+  right : 0%;
 }
 
 .modal-content {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes fadeIn {

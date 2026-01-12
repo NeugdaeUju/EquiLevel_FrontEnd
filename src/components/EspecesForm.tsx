@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../assets/scss/especesForm.scss'
 
 function EspecesForm() {
     const [especeName, setEspeceName] = useState('')
@@ -8,15 +9,16 @@ function EspecesForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='especeName'>Nom de l'espèce</label>
+        <form onSubmit={handleSubmit} className='espece-form'>
+            <label htmlFor='especeName' className='espece-form__name'>Nom de l'espèce</label>
             <input type='text'
                    value={especeName}
                    id='especeName'
                    onChange={(e) => setEspeceName(e.target.value)}
                    required
-                   placeholder='ex : Akhal Téké'/>
-            <button type='submit'>Valider</button>
+                   placeholder='ex : Akhal Téké'
+                   className='espece-form__input'/>
+            <button type='submit' className='espece-form__btn'>Valider</button>
         </form>
     )
 }
