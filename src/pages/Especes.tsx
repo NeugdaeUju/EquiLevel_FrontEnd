@@ -3,20 +3,20 @@ import { useState} from 'react';
 import Modal from '../components/Modal.tsx';
 import EspecesForm from '../components/EspecesForm.tsx';
 import type { RootState} from '../store/store.ts'
-
-// import ModalRaces from '../components/ModalRaces.tsx';
+import '../assets/scss/especes.scss';
 import { Link } from 'react-router-dom'
+import { FaPenToSquare } from "react-icons/fa6";
 
 function Especes() {
     const token = useSelector((state: RootState) => state.auth.token)
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return(
-        <div className='container'>
-            <div className='hero'>
-                <h1>Espèces</h1>
+        <div className='especes-container'>
+            <div className='especes-container__hero'>
+                <h1 className='especes-container__hero--title'>Espèces</h1>
                 { token && 
-                    <button onClick={() => setIsModalOpen(true)}> Ajouter une espèces </button>}
+                    <button onClick={() => setIsModalOpen(true)} className='especes-container__hero--button'> <FaPenToSquare/> Ajouter une espèces </button>}
                     <Modal
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
@@ -24,26 +24,40 @@ function Especes() {
                             <EspecesForm/>
                     </Modal>
             </div>
-            <div className='especes-list'>
-                <article className='espace-list_especes'>
-                    <Link to='/horses'>Chevaux</Link>
-                </article>
+            <div className='especes-container__list'>
+                <figure className='especes-container__list--especes'>
+                    <Link to='/horses'>
+                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
+                        <figcaption className='especes-container__list--especes__name'>Chevaux</figcaption>
+                    </Link>
+                </figure> 
                 
-                <article className='espace-list_especes'>
-                    <Link to='/poneys'>Poneys</Link>
-                </article>
+                <figure className='especes-container__list--especes'>
+                    <Link to='/poneys'>
+                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
+                        <figcaption className='especes-container__list--especes__name'>Poneys</figcaption>
+                    </Link>
+                </figure>
                 
-                <article className='espace-list_especes'>
-                    <Link to='/trail-horses'>Chevaux de trait</Link>
-                </article>
+                <figure className='especes-container__list--especes'>
+                    <Link to='/trail-horses'>
+                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
+                        <figcaption className='especes-container__list--especes__name'>Chevaux de trait</figcaption>
+                    </Link>
+                </figure>
                 
-                <article className='espace-list_especes'>
-                    <Link to='/donkeys'>Anes</Link>
-                </article>
+                <figure className='especes-container__list--especes'>
+                    <Link to='/donkeys'>
+                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
+                        <figcaption className='especes-container__list--especes__name'>Anes</figcaption>
+                    </Link>
+                </figure>
                 
-                <article className='espace-list_especes'>
-                    <Link to='/special-horses'>Chevaux spéciaux et divins</Link>
-                </article>
+                <figure className='especes-container__list--especes'>
+                    <Link to='/special-horses'>
+                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
+                        <figcaption className='especes-container__list--especes__name'>Chevaux spéciaux et divins</figcaption></Link>
+                </figure>
                 
             </div>
             

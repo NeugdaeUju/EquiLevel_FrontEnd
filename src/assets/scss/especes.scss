@@ -1,0 +1,56 @@
+@use 'variables';
+
+.especes-container {
+    width : 90%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    position : relative;
+
+    &__hero {
+        position : relative;
+        text-align: center;
+        width : 100%;
+
+        &--button {
+            position : absolute;
+            right: 10%;
+            bottom : 38%;
+            background-color: variables.$tertiary-color;
+            border :none;
+            color : variables.$primary-light-color;
+            text-align: center;
+            padding : 19px 60px;
+            border-radius : 10px;
+            border: 1px solid variables.$secondary-color;
+            cursor: pointer;
+        }
+    }
+
+    &__list {
+        width : 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top : 4em;
+
+        &--especes {
+            width : 20%;
+            background: linear-gradient( variables.$primary-light-color, variables.$primary-color, variables.$primary-dark-color);
+            height : 15rem;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column-reverse;
+            border: 1px solid variables.$primary-color;
+
+            &__name {
+                background-color: variables.$primary-light-color;
+                padding : 0.5em;
+                padding-left : 1em;
+                border: 1px solid variables.$primary-color;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+    }
+}
