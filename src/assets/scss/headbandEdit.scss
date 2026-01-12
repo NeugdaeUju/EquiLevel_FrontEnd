@@ -1,0 +1,23 @@
+@use 'variables';
+
+.headband {
+    background-color: variables.$pink-dark;
+    height : 2rem;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__icon, &__text, &__link {
+        color: variables.$pink-light;
+    }
+
+    &__link {
+        position : absolute;
+        right: 1rem;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}

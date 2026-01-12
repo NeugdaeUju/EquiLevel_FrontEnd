@@ -1,0 +1,22 @@
+@use 'variables';
+
+.header {
+    background-color: variables.$primary-color;
+    height : 3.5rem;
+    width : 100%;
+    padding: 1rem;
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom : 4rem;
+
+    &__nav {
+        display: flex;
+        gap : 2rem;
+
+    }
+
+    &__title {
+        padding-left: 6rem;
+    }
+}
