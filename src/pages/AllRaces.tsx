@@ -7,6 +7,7 @@ import { FaPenToSquare } from "react-icons/fa6";
 // import EspecesCard from '../components/EspecesCard.tsx';
 import { createEspece } from '../features/especes/especesSlice.ts';
 import '../assets/scss/allRaces.scss'
+import { Link } from 'react-router-dom';
 
 
 function AllRaces() {
@@ -42,6 +43,14 @@ function AllRaces() {
                                 setRacesName={setName}
                                 racesName={name}/>
                     </Modal>
+            </div>
+            <div className='races-container__filtres-container'>
+                <Link to="/horses" className='races-container__filtres'>Chevaux de selle</Link>
+                <Link to="/poneys" className='races-container__filtres'>Poneys de selle</Link>
+                <Link to="/trail-horses" className='races-container__filtres'>Chevaux de trait</Link>
+                <Link to="/donkeys" className='races-container__filtres'>Anes</Link>
+                <Link to="/special-horses" className='races-container__filtres'>Chevaux spéciaux et divins</Link>
+
             </div>
             {/*<div className='races-container__list'>
                 {especes.map(espece => (

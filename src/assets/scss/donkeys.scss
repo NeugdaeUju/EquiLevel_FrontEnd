@@ -1,0 +1,21 @@
+@use 'variables';
+
+.container {
+    text-align: center;
+
+    &__links {
+        display: flex;
+        gap: 3rem;
+        margin-top : 3rem;
+        margin-bottom : 2rem;
+
+        &--link {
+            background: linear-gradient(variables.$pink-light, variables.$pink-dark);
+        color : variables.$primary-light-color;
+        border: 1px solid variables.$primary-color;
+        padding : 1.188rem 5rem;
+        border-radius : 10px;
+        font-weight: bold;
+        }
+    }
+}

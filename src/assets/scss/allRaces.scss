@@ -53,4 +53,20 @@
             }
         }
     }
+
+    &__filtres-container {
+        display: flex;
+        gap: 3rem;
+        margin-top : 3rem;
+        margin-bottom : 2rem;
+    }
+
+    &__filtres {
+        background: linear-gradient(variables.$pink-light, variables.$pink-dark);
+        color : variables.$primary-light-color;
+        border: 1px solid variables.$primary-color;
+        padding : 1.188rem 5rem;
+        border-radius : 10px;
+        font-weight: bold;
+    }
 }

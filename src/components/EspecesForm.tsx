@@ -8,12 +8,6 @@ type FormProps = {
 }
 
 function EspecesForm({ handleSubmit, setEspecesName, especesName} : FormProps) {
-    /*const [especeName, setEspeceName] = useState('')
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Vous avez créer une especes :', especeName)
-    }*/
-
     return (
         <form onSubmit={handleSubmit} className='espece-form'>
             <label htmlFor='especeName' className='espece-form__name'>Nom de l'espèce</label>
