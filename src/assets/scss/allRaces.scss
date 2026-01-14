@@ -1,6 +1,6 @@
 @use 'variables';
 
-.especes-container {
+.races-container {
     width : 90%;
     display : flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
         justify-content: center;
         margin-top : 4em;
 
-        &--especes {
+        &--races {
             width : 20%;
             background: linear-gradient( variables.$primary-light-color, variables.$primary-color, variables.$primary-dark-color);
             height : 15rem;
@@ -46,20 +46,11 @@
             &__name {
                 background-color: variables.$primary-light-color;
                 padding : 0.5em;
-                padding-left : 1em;
+                text-align : center;
                 border: 1px solid variables.$primary-color;
                 border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
             }
         }
-    }
-
-    &__btn {
-        background: linear-gradient(variables.$pink-light, variables.$pink-dark);
-        color : variables.$primary-light-color;
-        border: 1px solid variables.$primary-color;
-        padding : 1.188rem 7.5rem;
-        border-radius : 10px;
-        font-weight: bold;
     }
 }

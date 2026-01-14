@@ -37,7 +37,7 @@ function Especes() {
                     <Modal
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
-                        title='Ajouter une espèces'>
+                        title='Ajouter une espèce'>
                             <EspecesForm
                                 handleSubmit={handleSubmit}
                                 setEspecesName={setName}
@@ -50,7 +50,7 @@ function Especes() {
                 ))}
             </div>
             
-            <Link to='/all-races'>Toute les races</Link>
+            <Link to='/all-races' className='especes-container__btn'>Toute les races</Link>
 
         </div>
     )
