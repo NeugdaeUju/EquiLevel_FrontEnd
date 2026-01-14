@@ -6,8 +6,8 @@ function Header() {
         <header className='header'>
             <Link to='/' className='header__title'>EquiLevel</Link>
             <nav className='header__nav'>
-                <p>Un lien</p>
-                <p>Un second lien</p>
+                <Link to='/'>Accueils</Link>
+                <Link to='/especes'>Especes</Link>
             </nav>
         </header>
     )
