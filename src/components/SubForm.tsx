@@ -13,10 +13,6 @@ type HeaderProps = {
 }
 
 function Form({ button, link, linkText, handleSubmit, email, password, setEmail, setPassword }: HeaderProps) {
-    /*const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        console.log('You clicked submit.')
-    }*/
 
     return (
         <form className='login-container__form' onSubmit={handleSubmit}>

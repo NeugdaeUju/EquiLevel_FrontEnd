@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import '../assets/scss/especesForm.scss'
 
-function EspecesForm() {
-    const [especeName, setEspeceName] = useState('')
+type FormProps = {
+    handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    setEspecesName: React.Dispatch<React.SetStateAction<string>>;
+    especesName: string
+}
+
+function EspecesForm({ handleSubmit, setEspecesName, especesName} : FormProps) {
+    /*const [especeName, setEspeceName] = useState('')
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Vous avez créer une especes :', especeName)
-    }
+    }*/
 
     return (
         <form onSubmit={handleSubmit} className='espece-form'>
             <label htmlFor='especeName' className='espece-form__name'>Nom de l'espèce</label>
             <input type='text'
-                   value={especeName}
+                   value={especesName}
                    id='especeName'
-                   onChange={(e) => setEspeceName(e.target.value)}
+                   onChange={(e) => setEspecesName(e.target.value)}
                    required
                    placeholder='ex : Akhal Téké'
                    className='espece-form__input'/>

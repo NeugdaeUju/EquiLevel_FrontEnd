@@ -1,15 +1,32 @@
-import { useSelector } from 'react-redux';
-import { useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 import Modal from '../components/Modal.tsx';
 import EspecesForm from '../components/EspecesForm.tsx';
-import type { RootState} from '../store/store.ts'
+import type { RootState, AppDispatch } from '../store/store.ts'
 import '../assets/scss/especes.scss';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { FaPenToSquare } from "react-icons/fa6";
+import EspecesCard from '../components/EspecesCard.tsx';
+import { createEspece } from '../features/especes/especesSlice.ts';
+import { fetchEspeces } from '../features/especes/especesGetSlice.ts';
 
 function Especes() {
     const token = useSelector((state: RootState) => state.auth.token)
+    const especes = useSelector((state: RootState) => state.especesGet.especes)
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const dispatch = useDispatch<AppDispatch>()
+    const [name, setName] = useState('');
+
+    useEffect(() => {
+        dispatch(fetchEspeces());
+    }, [dispatch]);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        dispatch(createEspece(name))
+        console.log('Vous avez créer une especes :', name)
+    }
 
     return(
         <div className='especes-container'>
@@ -21,44 +38,16 @@ function Especes() {
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
                         title='Ajouter une espèces'>
-                            <EspecesForm/>
+                            <EspecesForm
+                                handleSubmit={handleSubmit}
+                                setEspecesName={setName}
+                                especesName={name}/>
                     </Modal>
             </div>
             <div className='especes-container__list'>
-                <figure className='especes-container__list--especes'>
-                    <Link to='/horses'>
-                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
-                        <figcaption className='especes-container__list--especes__name'>Chevaux</figcaption>
-                    </Link>
-                </figure> 
-                
-                <figure className='especes-container__list--especes'>
-                    <Link to='/poneys'>
-                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
-                        <figcaption className='especes-container__list--especes__name'>Poneys</figcaption>
-                    </Link>
-                </figure>
-                
-                <figure className='especes-container__list--especes'>
-                    <Link to='/trail-horses'>
-                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
-                        <figcaption className='especes-container__list--especes__name'>Chevaux de trait</figcaption>
-                    </Link>
-                </figure>
-                
-                <figure className='especes-container__list--especes'>
-                    <Link to='/donkeys'>
-                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
-                        <figcaption className='especes-container__list--especes__name'>Anes</figcaption>
-                    </Link>
-                </figure>
-                
-                <figure className='especes-container__list--especes'>
-                    <Link to='/special-horses'>
-                        <div className='especes-container__list--especes__image'></div> {/* Cette div deviendra une image */}
-                        <figcaption className='especes-container__list--especes__name'>Chevaux spéciaux et divins</figcaption></Link>
-                </figure>
-                
+                {especes.map(espece => (
+                    <EspecesCard key={espece.id} name={espece.name} link={`/${espece.name.toLowerCase().replace(/\s+/g, '-')}`} />
+                ))}
             </div>
             
         </div>
