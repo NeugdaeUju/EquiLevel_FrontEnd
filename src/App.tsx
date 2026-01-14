@@ -13,6 +13,7 @@ import Poneys from './pages/Poneys.tsx';
 import TrailHorses from './pages/TrailHorses.tsx';
 import Donkeys from './pages/Donkeys.tsx';
 import SpecialsHorses from './pages/SpecialsHorses.tsx';
+import AllRaces from './pages/AllRaces.tsx'
 
 function App() {
   const token = useSelector((state: RootState) => state.auth.token)
@@ -31,6 +32,7 @@ function App() {
             <Route path='/trail-horses' element={<TrailHorses/>} />
             <Route path='/donkeys' element={<Donkeys/>} />
             <Route path='/special-horses' element={<SpecialsHorses/>} />
+            <Route path='/all-races' element={<AllRaces/>} />
           </Routes>
         </Layout>
       </BrowserRouter>

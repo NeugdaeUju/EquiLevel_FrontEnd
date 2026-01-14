@@ -4,7 +4,7 @@ import Modal from '../components/Modal.tsx';
 import EspecesForm from '../components/EspecesForm.tsx';
 import type { RootState, AppDispatch } from '../store/store.ts'
 import '../assets/scss/especes.scss';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FaPenToSquare } from "react-icons/fa6";
 import EspecesCard from '../components/EspecesCard.tsx';
 import { createEspece } from '../features/especes/especesSlice.ts';
@@ -50,6 +50,8 @@ function Especes() {
                 ))}
             </div>
             
+            <Link to='/all-races'>Toute les races</Link>
+
         </div>
     )
 }
