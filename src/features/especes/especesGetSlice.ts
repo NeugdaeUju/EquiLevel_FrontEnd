@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { especesGet } from "./especesAPI";
 
 interface Especes {
-    id: string;
+    _id: string;
     name: string;
 }
 

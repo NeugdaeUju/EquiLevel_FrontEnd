@@ -46,7 +46,7 @@ function Especes() {
             </div>
             <div className='especes-container__list'>
                 {especes.map(espece => (
-                    <EspecesCard key={espece.id} name={espece.name} link={`/${espece.name.toLowerCase().replace(/\s+/g, '-')}`} />
+                    <EspecesCard key={espece._id} name={espece.name} link={`/${espece.name.toLowerCase().replace(/\s+/g, '-')}`} />
                 ))}
             </div>
             

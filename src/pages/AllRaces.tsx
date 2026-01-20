@@ -1,32 +1,46 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '../components/Modal.tsx';
 import RacesForm from '../components/RacesForm.tsx';
 import type { RootState, AppDispatch } from '../store/store.ts'
 import { FaPenToSquare } from "react-icons/fa6";
-// import EspecesCard from '../components/EspecesCard.tsx';
-import { createEspece } from '../features/especes/especesSlice.ts';
+import RacesCard from '../components/RacesCard.tsx';
+import { createRace } from '../features/races/racesSlice.ts';
+import { fetchRaces } from '../features/races/racesGetSlice.ts';
+import { fetchEspeces } from '../features/especes/especesGetSlice.ts';
 import '../assets/scss/allRaces.scss'
 import { Link } from 'react-router-dom';
 
 
 function AllRaces() {
     const token = useSelector((state: RootState) => state.auth.token)
-    //const especes = useSelector((state: RootState) => state.especesGet.especes)
+    const createdRace = useSelector((state: RootState) => state.races.race)
+    const races = useSelector((state: RootState) => state.racesGet.races)
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const dispatch = useDispatch<AppDispatch>()
     const [name, setName] = useState('');
+    const [especeId, setEspeceId] = useState('');
 
-    /*useEffect(() => {
+    useEffect(() => {
+        dispatch(fetchRaces());
         dispatch(fetchEspeces());
-    }, [dispatch]);*/
+    }, [dispatch]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        dispatch(createEspece(name))
-        console.log('Vous avez créer une especes :', name)
+        dispatch(createRace({name , especeId}))
+        console.log('Vous avez créé une race :', name)
     }
+
+    useEffect(() => {
+        if (createdRace?._id) {
+            console.log('ID de la race créée :', createdRace._id);
+            setIsModalOpen(false);
+            setName('');
+            setEspeceId('');
+        }
+    }, [createdRace]);
 
     return (
         <div className='races-container'>
@@ -41,7 +55,9 @@ function AllRaces() {
                             <RacesForm
                                 handleSubmit={handleSubmit}
                                 setRacesName={setName}
-                                racesName={name}/>
+                                racesName={name}
+                                setEspeceId={setEspeceId}
+                                especeId={especeId}/>
                     </Modal>
             </div>
             <div className='races-container__filtres-container'>
@@ -52,11 +68,11 @@ function AllRaces() {
                 <Link to="/special-horses" className='races-container__filtres'>Chevaux spéciaux et divins</Link>
 
             </div>
-            {/*<div className='races-container__list'>
-                {especes.map(espece => (
-                    <EspecesCard key={espece.id} name={espece.name} link={`/${espece.name.toLowerCase().replace(/\s+/g, '-')}`} />
+            <div className='races-container__list'>
+                {races.map(race => (
+                    <RacesCard key={race._id} name={race.name} link={`/races/${race._id}`}/>
                 ))}
-            </div>*/}
+            </div>
 
         </div>
     )

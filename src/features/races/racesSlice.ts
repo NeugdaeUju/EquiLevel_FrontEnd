@@ -1,29 +1,30 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { especesCreate } from "./especesAPI";
+import { racesCreate } from "./racesAPI";
 
-interface Especes {
+interface Races {
     _id: string;
     name: string;
+    especeId: string;
 }
 
-interface EspecesState {
-    espece: Especes | null;
+interface RacesState {
+    race: Races | null;
     loading: boolean;
     error: string | null;
 }
 
-const initialState: EspecesState = {
-    espece: null,
+const initialState: RacesState = {
+    race: null,
     loading : false,
     error: null
 }
 
-export const createEspece = createAsyncThunk<Especes, string>(
-    'especes/create',
-    async ( name, thunkAPI ) => {
+export const createRace = createAsyncThunk<Races, { name: string; especeId: string }>(
+    'races/create',
+    async ({ name, especeId }, thunkAPI) => {
         try {
-            const data = await especesCreate(name);
-            return data.especes;
+            const data = await racesCreate(name, especeId);
+            return data.races;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(
                 error.response?.data?.message || 'erreur lors de la création'
@@ -32,25 +33,25 @@ export const createEspece = createAsyncThunk<Especes, string>(
     }
 );
 
-export const especesSlice = createSlice({
-    name: 'especes',
+export const racesSlice = createSlice({
+    name: 'races',
     initialState,
     reducers : {},
     extraReducers: (builder) => {
         builder
-            .addCase(createEspece.pending, (state) => {
+            .addCase(createRace.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(createEspece.fulfilled, (state, action) => {
+            .addCase(createRace.fulfilled, (state, action) => {
                 state.loading = false;
-                state.espece = action.payload;
+                state.race = action.payload;
             })
-            .addCase(createEspece.rejected, (state, action) => {
+            .addCase(createRace.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload as string || 'Erreur inconnue';
             })
     }
 });
 
-export default especesSlice.reducer;
+export default racesSlice.reducer;

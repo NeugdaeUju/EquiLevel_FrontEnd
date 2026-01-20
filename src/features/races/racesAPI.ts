@@ -1,9 +1,10 @@
 import apiRequest from '../../api/api.ts';
 
-export const especesCreate = async (name: string) => {
+export const racesCreate = async (name: string, especeId: string) => {
     try {
-        const response = await apiRequest.post('/especes', {
+        const response = await apiRequest.post('/races', {
             name,
+            especeId,
         });
         return response.data;
     } catch (error: any) {
@@ -11,7 +12,7 @@ export const especesCreate = async (name: string) => {
             throw 'Impossible de contacter le serveur';
         }
         if (error.response.status === 400) {
-            throw "Veuillez indiquer le nom de l'espece";
+            throw "Veuillez indiquer le nom de la race et/ou l'espece";
         }
         if (error.response.status === 401) {
             throw "Erreur d'authentification";
@@ -20,16 +21,16 @@ export const especesCreate = async (name: string) => {
     }
 }
 
-export const especesGet = async () => {
+export const racesGet = async () => {
     try {
-        const response = await apiRequest.get('/especes');
+        const response = await apiRequest.get('/races');
         return response.data
     } catch (error: any) {
         if (!error.response) {
             throw 'Impossible de contacter le serveur';
         }
         if (error.response.status === 400) {
-            throw "Aucune espèce trouvée";
+            throw "Aucune race trouvée";
         }
         if (error.response.status === 401) {
             throw "Erreur d'authentification";
