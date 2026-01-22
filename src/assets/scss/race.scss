@@ -1,0 +1,136 @@
+@use 'variables';
+
+.race-dashboard {
+    width : 100%;
+    margin : 0 10rem;
+
+    &__hero {
+        position : relative;
+        text-align: center;
+        width : 100%;
+
+        &--button {
+            position : absolute;
+            right: 10%;
+            bottom : 38%;
+            background-color: variables.$tertiary-color;
+            border :none;
+            color : variables.$primary-light-color;
+            text-align: center;
+            padding : 19px 60px;
+            border-radius : 10px;
+            border: 1px solid variables.$secondary-color;
+            cursor: pointer;
+        }
+    }
+
+    &__presentation {
+        display : flex;
+        width : 100%;
+        align-items: center;
+        justify-content: center;
+        gap : 6.375rem;
+        margin-top : 7.875rem;
+
+        &--image {
+            width : 20rem;
+            height: 20rem;
+            background-color: variables.$primary-color;
+            box-shadow: 8px 8px 10px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        &__informations {
+            width : 51.25rem;
+            height: 20rem;
+            border : 1px solid variables.$primary-dark-color;
+            padding : 1rem 1.25rem;
+            border-radius : 10px;
+
+            & p {
+                font-size: 1.25rem;
+            }
+
+            &--name {
+                font-weight : bold;
+                font-size: 1.5rem;
+            }
+
+            &__links {
+                display: flex;
+                gap : 2.625rem;
+                font-size: 1.25rem;                
+
+                &--link {
+                    background: linear-gradient(variables.$pink-light, variables.$pink-dark);
+                    color : variables.$primary-light-color;
+                    text-align: center;
+                    padding : 0.688rem 0;
+                    border-radius : 10px;
+                    width : 17.5rem; 
+                }
+            }
+        }
+    }
+
+
+    &__etapes-vie {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap : 3.438rem;
+        margin-top : 7rem;
+
+        &__block {
+            width : 40%;
+            background: linear-gradient(rgba(117,144,199, 0.5));
+            box-shadow: 8px 8px 10px 3px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            text-align: center;
+            height : 31.25rem;
+        }
+    }
+
+
+    &__reproduction {
+        width : 100%;
+        height : 31.25rem;
+        margin-top : 3.438rem;
+        padding : 1.25rem 0;
+        background: linear-gradient(rgba(117,144,199, 0.5));
+        box-shadow: 8px 8px 10px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        text-align: center;
+
+        &__types {
+            gap : 3.438rem;
+            display : flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            &--competences, &--robes {
+                width : 40%;
+                height : 80%;
+                margin-top : 2.5rem;
+            }
+        }
+    }
+
+
+    &__links {
+        margin-top : 6.876rem;
+        display : flex;
+        justify-content: center;
+        gap : 3.438rem;
+
+        & a {
+            background: linear-gradient(variables.$pink-light, variables.$pink-dark);
+            color : variables.$primary-light-color;
+            text-align: center;
+            padding : 0.688rem 0;
+            border-radius : 10px;
+            width : 20rem;
+        }
+    }
+}

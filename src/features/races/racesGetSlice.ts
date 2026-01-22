@@ -4,6 +4,7 @@ import { racesGet } from "./racesAPI";
 interface Races {
     _id: string;
     name: string;
+    especeId: string;
 }
 
 interface RacesState {
