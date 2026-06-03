@@ -1,0 +1,34 @@
+:root {
+  /*** Colors ***/
+  --cream : #F8F4EE;
+  --gold : #B8975A;
+  --gold-light : #D4B87A;
+  --gold-dark : #8A6E3E;
+  --charcoal : #2C2520;
+  --warm-gray : #6B6259;
+  --border : #E2D8CC;
+
+  /*** Fonts ***/
+  --serif : 'Cormorant Garamond', serif;
+  --sans : 'Poppins', sans-serif:
+
+}
+
+
+* , ::before , ::after {
+  box-sizing : border-box;
+  margin : 0;
+  padding : 0;
+}
+
+body {
+  font-family : var(--sans);
+  font-size : 13px;
+  background-color : var(--cream);
+  color : var(--charcoal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family : var(--serif);
+  color : var(--charcoal);
+}
