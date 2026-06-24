@@ -1,0 +1,77 @@
+@import 'index.css';
+
+header {
+    background-color: #2C2520;
+    height : 100vh;
+    width : 225px;
+    position : fixed;
+    top :0;
+    left : 0;
+    color : var(--gold);
+}
+
+.header-block {
+    padding : 40px 24px;
+}
+
+.header-title {
+    color : var(--gold-light);
+    font-size : 32px;
+    font-weight : 500;
+    /*font-family : var(--sans);*/
+    margin-bottom : 7px;
+}
+
+.header-subtitle {
+    color : var(--gold-dark);
+    font-weight : 200;
+    font-family : 'poppins', sans-serif;
+    padding-bottom : 27px;
+}
+
+li::marker {
+    content :'';
+}
+
+nav {
+    padding: 32px 0px;
+    border-top : 0.5px solid var(--gold);
+}
+
+.navigation-block {
+    margin-bottom : 34px;
+}
+
+.navigation-block-title {
+    text-transform: uppercase;
+    color : var(--gold-dark);
+    font-weight : 200;
+    font-family : 'poppins', sans-serif;
+    font-size : 13px;
+    margin-bottom : 10px;
+    margin-left : 16px;
+}
+
+.navigation-block-link {
+    padding : 10px 16px;
+    color : var(--cream);
+}
+
+.active {
+    background : rgba(212, 184, 122, 0.12);
+    border-left : 2px solid var(--gold);
+    color : var(--gold)
+}
+
+.compteur {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.num {
+    padding : 2px 10px;
+    border-radius: 999px;
+    background : rgba(212, 184, 122, 0.12);
+    color : var(--gold)
+}

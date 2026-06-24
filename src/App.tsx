@@ -1,9 +1,10 @@
+import Sidebar from "./components/Sidebar";
 
 function App() {
 
   return (
     <>
-      <h1>Ecurie - Equideow Manager</h1>
+      <Sidebar/>
     </>
   )
 }

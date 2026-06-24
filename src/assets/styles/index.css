@@ -9,8 +9,6 @@
   --border : #E2D8CC;
 
   /*** Fonts ***/
-  --serif : 'Cormorant Garamond', serif;
-  --sans : 'Poppins', sans-serif:
 
 }
 
@@ -29,11 +27,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family : var(--serif);
+  font-family : 'Cormorand Garmond', serif;
   color : var(--charcoal);
 }
 
 a {
   text-decoration : none;
   color : var(--gold-dark);
+}
+
+p , a , li{
+  font-family : 'Poppins', sans-serif;
 }
