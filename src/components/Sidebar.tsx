@@ -1,6 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../store/hooks';
+import { logout } from '../store/Authslice';
 import '../assets/styles/sidebar.css'
 
 function Sidebar() {
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate('/login', { replace: true });
+    };
+
     return (
         <header>
             <div className='header-block'>
@@ -35,6 +46,12 @@ function Sidebar() {
                     </ul>
                 </div>
             </nav>
+
+            <div className='sidebar-footer'>
+                <button type='button' className='logout-button' onClick={handleLogout}>
+                    Déconnexion
+                </button>
+            </div>
         </header>
     )
 }

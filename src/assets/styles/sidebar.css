@@ -8,6 +8,30 @@ header {
     top :0;
     left : 0;
     color : var(--gold);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 20px 16px;
+    border-top: 0.5px solid rgba(184, 151, 90, 0.2);
+}
+
+.logout-button {
+    width: 100%;
+    background: transparent;
+    border: 0.5px solid var(--gold-dark);
+    border-radius: 8px;
+    padding: 9px;
+    color: var(--gold);
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background: rgba(184, 151, 90, 0.12);
 }
 
 .header-block {
