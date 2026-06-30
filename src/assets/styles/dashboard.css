@@ -1,0 +1,11 @@
+@import 'index.css';
+
+.dashboard-layout {
+  display: flex;
+}
+
+.dashboard-content {
+  margin-left: 225px;
+  padding: 32px;
+  width: 100%;
+}
