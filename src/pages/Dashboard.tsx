@@ -1,6 +1,6 @@
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import Cards from '../components/Cards';
+import Cards from '../components/cards';
 import '../assets/styles/dashboard.css';
 
 function Dashboard() {
