@@ -1,4 +1,5 @@
 import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
 import '../assets/styles/dashboard.css';
 
 function Dashboard() {
@@ -6,8 +7,7 @@ function Dashboard() {
     <div className="dashboard-layout">
       <Sidebar />
       <main className="dashboard-content">
-        <h1>Tableau de bord</h1>
-        <p>La liste de vos chevaux apparaîtra ici.</p>
+        <Header />
       </main>
     </div>
   );
