@@ -9,3 +9,10 @@
   padding-top: 32px;
   width: 100%;
 }
+
+.cards-container {
+  padding : 33px 22px;
+  display : flex;
+  justify-content : space-between;
+  width : 100%;
+}
