@@ -99,3 +99,7 @@ nav {
     background : rgba(212, 184, 122, 0.12);
     color : var(--gold)
 }
+
+li{
+    cursor : pointer;
+}
