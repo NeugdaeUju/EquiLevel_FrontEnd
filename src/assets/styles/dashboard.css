@@ -10,6 +10,44 @@
   width: 100%;
 }
 
+.horses-table-step-birth,
+.horses-table-step-growth,
+.horses-table-step-training,
+.horses-table-step-competition,
+.horses-table-step-blup {
+  padding : 5px 10px;
+  border-radius : 999px;
+  text-align : center;
+  font-size : 0.75rem;
+  white-space : nowrap;
+}
+
+.horses-table-step-birth {
+  color : rgba(92,67, 30, 0.85);
+  background-color : rgba(226, 200, 165, 0.5);
+}
+
+.horses-table-step-growth {
+  color : rgba(50, 80, 30, 0.85);
+  background-color : rgba(165, 210, 165, 0.5);
+}
+
+.horses-table-step-training {
+  color : rgba(67, 90 , 92, 0.75);
+  background-color : rgba(165, 222, 226, 0.75);
+}
+
+.horses-table-step-competition {
+  color : rgba(50, 50, 120, 0.85);
+  background-color : rgba(165, 165, 226, 0.5);
+}
+
+.horses-table-step-blup {
+  color : rgba(80, 60, 10, 0.9);
+  background-color : rgba(212, 184, 122, 0.45);
+}
+
+
 .cards-container {
   padding : 33px 22px;
   display : flex;
@@ -87,7 +125,6 @@ th, td {
 
 .horses-table-horse-image {
   border-radius : 999px;
-  background-color : #D9D9D9;
   padding : 7px 8px;
   text-align : center;
 }
@@ -95,14 +132,6 @@ th, td {
 .horses-table-horse-info p:last-child {
   font-size : 0.7rem;
   font-weight : 300;
-}
-
-.horses-table-step-training {
-  color : rgba(67, 90, 92, 0.75);
-  background-color : rgba(165, 222, 226, 0.75);
-  padding : 7px 0;
-  text-align : center;
-  border-radius : 999px;
 }
 
 .horses-table-blup {

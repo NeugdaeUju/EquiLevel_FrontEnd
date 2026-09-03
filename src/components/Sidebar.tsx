@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../store/hooks';
-import { logout } from '../store/Authslice';
+import { logout } from '../store/authSlice';
 import '../assets/styles/sidebar.css'
 
 function Sidebar() {

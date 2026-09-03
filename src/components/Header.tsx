@@ -1,14 +1,17 @@
 import '../assets/styles/header.css';
 
+interface Props {
+    onOpenModal: () => void;
+}
 
-function Header() {
+function Header({ onOpenModal }: Props) {
 
     return (
         <div className='header'>
             <h1>Tableau de bord</h1>
             <div className='header-actions'>
                 <input type='search' placeholder='Recherche...' className='research'></input>
-                <button type='button' className='add-horse'>Nouveau Cheval</button>
+                <button type='button' className='add-horse' onClick={onOpenModal}>Nouveau Cheval</button>
             </div>
         </div>
     )
