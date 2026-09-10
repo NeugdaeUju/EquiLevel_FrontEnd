@@ -89,7 +89,7 @@ function Dashboard() {
       <Sidebar />
 
       <main className="dashboard-content">
-        <Header onOpenModal={() => setIsModalOpen(true)} />
+        <Header onOpenModal={() => setIsModalOpen(true)} title='Tableau de bord'/>
 
         {/* KPI Cards */}
         <div className='cards-container'>

@@ -79,6 +79,10 @@ nav {
 .navigation-block-link {
     padding : 10px 16px;
     color : var(--cream);
+    display : flex;
+    text-decoration : none;
+    align-items : center;
+    justify-content : space-between;
 }
 
 .active {
