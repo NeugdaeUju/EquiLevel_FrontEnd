@@ -14,7 +14,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/horses" element={<Horses />} />
-          <Route path='/horses/:id' element={<HorsePage />} />
+          <Route path="/horses/:id" element={<HorsePage />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

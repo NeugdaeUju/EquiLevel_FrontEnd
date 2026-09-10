@@ -128,6 +128,8 @@ function Horses() {
                     const avatar = getAvatarColor(horse.name);
                     return  (
                     <HorseCard 
+                        key={horse._id}
+                        id={horse._id}
                         step={horse.step}
                         initial={getInitials(horse.name)}
                         race={horse.race.name}

@@ -1,7 +1,10 @@
 import '../assets/styles/horseCard.css';
+import { useNavigate } from 'react-router-dom';
 
 
-function HorseCard({step, initial, name, race, sexe, age, blup, avatarBg, avatarColor} : {step :string , initial:string, name: string, race:string , sexe: string , age?:string, blup:number, avatarBg: string, avatarColor: string}) {
+function HorseCard({step, initial, name, race, sexe, age, blup, avatarBg, avatarColor, id} : {step :string , initial:string, name: string, race:string , sexe: string , age?:string, blup:number, avatarBg: string, avatarColor: string , id: string}) {
+    const navigate = useNavigate();
+
     return (
         <div className='horseCard'>
             <div className='horseCard-heading' style={{backgroundColor: avatarColor}}>
@@ -26,7 +29,14 @@ function HorseCard({step, initial, name, race, sexe, age, blup, avatarBg, avatar
 
             <div className='horseCard-footer'>
                 <p className='horseCard-footer-race'>{race}</p>
-                <button type='button' className='horseCard-footer-button'>Voir la fiche</button>
+                <button
+                    type='button'
+                    className='horseCard-footer-button'
+                    onClick={() => navigate(`/horses/${id}`)}
+                    >
+                        Voir la fiche
+                </button>
+                
             </div>
         </div>
     )
